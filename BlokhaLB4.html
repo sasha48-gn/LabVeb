@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Лабораторна робота №4 - Блоха</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .task {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .marquee-container {
+            margin: 15px 0;
+            padding: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .vertical-container {
+            margin: 15px 0;
+            padding: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Кольори фону для різних смуг */
+        .color1 { background-color: #ffcccc; }
+        .color2 { background-color: #ccffcc; }
+        .color3 { background-color: #ccccff; }
+        .color4 { background-color: #ffffcc; }
+        .color5 { background-color: #ffccff; }
+        
+        /* Стилі для тексту */
+        .bold { font-weight: bold; }
+        .italic { font-style: italic; }
+        .underline { text-decoration: underline; }
+        .large { font-size: 1.2em; }
+        .small { font-size: 0.8em; }
+        .shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        
+        /* Анімації для горизонтального руху */
+        @keyframes swing {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(calc(100% - 100px)); }
+            100% { transform: translateX(0); }
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes scroll-right-stop {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(calc(100% - 100%)); }
+        }
+        
+        /* Анімації для вертикального руху */
+        @keyframes vertical-swing {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(100px); }
+            100% { transform: translateY(0); }
+        }
+        
+        @keyframes scroll-up {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+        
+        @keyframes scroll-down-stop {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Застосування анімацій */
+        .swing { animation: swing 5s ease-in-out infinite; }
+        .scroll-left { animation: scroll-left 10s linear infinite; }
+        .scroll-right-stop { 
+            animation: scroll-right-stop 8s linear forwards; 
+            animation-fill-mode: forwards;
+        }
+        .delay1 { animation-delay: 0.5s; }
+        .delay2 { animation-delay: 1.5s; }
+        
+        .vertical-swing { animation: vertical-swing 4s ease-in-out infinite; }
+        .scroll-up { animation: scroll-up 12s linear infinite; }
+        .scroll-down-stop { 
+            animation: scroll-down-stop 10s linear forwards; 
+            animation-fill-mode: forwards;
+        }
+        .v-delay1 { animation-delay: 1s; }
+        .v-delay2 { animation-delay: 2s; }
+        
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .image-container img {
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Лабораторна робота №4</h1>
+    <h2>Анімація тексту та зображень</h2>
+    
+    <!-- Завдання 4.1 - Горизонтальна анімація -->
+    <div class="task">
+        <h2>Завдання 4.1 - Горизонтальна анімація тексту</h2>
+        
+        <!-- Рядок 1: Текст коливається з боку в бік -->
+        <div class="marquee-container color1">
+            <div class="swing bold large">
+                Цей текст коливається з боку в бік!
+            </div>
+        </div>
+        
+        <!-- Рядок 2: Текст пробігає справа наліво та з'являється знову -->
+        <div class="marquee-container color2">
+            <div class="scroll-left italic shadow">
+                Цей текст пробігає справа наліво та з'являється знову!
+            </div>
+        </div>
+        
+        <!-- Рядок 3: Текст пробігає зліва направо та зупиняється -->
+        <div class="marquee-container color3">
+            <div class="scroll-right-stop underline">
+                Цей текст пробігає зліва направо та зупиняється!
+            </div>
+        </div>
+        
+        <!-- Рядок 4: Текст з різними запізненнями -->
+        <div class="marquee-container color4">
+            <div class="scroll-left delay1 small">
+                Перший текст з запізненням 0.5с!
+            </div>
+        </div>
+        
+        <!-- Рядок 5: Текст з різними запізненнями -->
+        <div class="marquee-container color5">
+            <div class="scroll-left delay2">
+                Другий текст з запізненням 1.5с!
+            </div>
+        </div>
+    </div>
+    
+    <!-- Завдання 4.2 - Вертикальна анімація -->
+    <div class="task">
+        <h2>Завдання 4.2 - Вертикальна анімація тексту та зображень</h2>
+        
+        <!-- Рядок 1: Текст та рисунки коливаються -->
+        <div class="vertical-container color1">
+            <div class="vertical-swing bold large">
+                Текст, що коливається вертикально!
+            </div>
+        </div>
+        
+        <!-- Рядок 2: Послідовність рисунків пробігає знизу до гори -->
+        <div class="vertical-container color2">
+            <div class="scroll-up image-container">
+                <img src="C:\Users\Олександра\OneDrive\Рабочий стол\VebLBBlokha\1.jpg" alt="Зображення 1">
+                <img src="C:\Users\Олександра\OneDrive\Рабочий стол\VebLBBlokha\2.jpg" alt="Зображення 2">
+                <img src="C:\Users\Олександра\OneDrive\Рабочий стол\VebLBBlokha\3.jpg" alt="Зображення 3">
+            </div>
+        </div>
+        
+        <!-- Рядок 3: Послідовність рисунків пробігає згори до низу із зупинкою -->
+        <div class="vertical-container color3">
+            <div class="scroll-down-stop image-container">
+                <img src="C:\Users\Олександра\OneDrive\Рабочий стол\VebLBBlokha\7.jpg" alt="Зображення 4">
+                <img src="C:\Users\Олександра\OneDrive\Рабочий стол\VebLBBlokha\5.jpg" alt="Зображення 5">
+                <img src="C:\Users\Олександра\OneDrive\Рабочий стол\VebLBBlokha\6.jpg" alt="Зображення 6">
+            </div>
+        </div>
+        
+        <!-- Рядок 4: Текст з різними запізненнями -->
+        <div class="vertical-container color4">
+            <div class="scroll-up v-delay1 italic">
+                Текст з запізненням 1с!
+            </div>
+        </div>
+        
+        <!-- Рядок 5: Текст з різними запізненнями -->
+        <div class="vertical-container color5">
+            <div class="scroll-up v-delay2 underline shadow">
+                Текст з запізненням 2с!
+            </div>
+        </div>
+    </div>
+</body>
+</html>
