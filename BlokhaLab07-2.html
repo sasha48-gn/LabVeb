@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlokhaLab07-2.htm - Форма з усіма елементами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .submit-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .regular-btn {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Форма з усіма елементами HTML</h1>
+        
+        <form action="#" method="post">
+            <!-- Текстове поле -->
+            <div class="form-section">
+                <h2>Текстові поля</h2>
+                
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я" size="30">
+                
+                <label for="email">Електронна пошта:</label>
+                <input type="text" id="email" name="email" placeholder="example@domain.com" size="30">
+            </div>
+            
+            <!-- Пароль -->
+            <div class="form-section">
+                <h2>Поле пароля</h2>
+                
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" size="20" maxlength="15" placeholder="Введіть пароль">
+            </div>
+            
+            <!-- Текстова область -->
+            <div class="form-section">
+                <h2>Текстова область</h2>
+                
+                <label for="comments">Ваші коментарі:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50" wrap="soft">Тут ви можете ввести довгий текст...</textarea>
+            </div>
+            
+            <!-- Випадаючий список -->
+            <div class="form-section">
+                <h2>Випадаючий список</h2>
+                
+                <label for="country">Країна:</label>
+                <select id="country" name="country" size="1">
+                    <option value="ukraine">Україна</option>
+                    <option value="poland">Польща</option>
+                    <option value="germany">Німеччина</option>
+                    <option value="france">Франція</option>
+                </select>
+                
+                <label for="cities">Міста (багато вибору):</label>
+                <select id="cities" name="cities" size="4" multiple>
+                    <option value="kyiv">Київ</option>
+                    <option value="lviv">Львів</option>
+                    <option value="kharkiv">Харків</option>
+                    <option value="odesa">Одеса</option>
+                    <option value="dnipro">Дніпро</option>
+                </select>
+            </div>
+            
+            <!-- Прапорці -->
+            <div class="form-section">
+                <h2>Прапорці (Checkboxes)</h2>
+                
+                <p>Оберіть ваші інтереси:</p>
+                <input type="checkbox" id="sports" name="interests" value="sports" checked>
+                <label for="sports">Спорт</label><br>
+                
+                <input type="checkbox" id="music" name="interests" value="music">
+                <label for="music">Музика</label><br>
+                
+                <input type="checkbox" id="books" name="interests" value="books">
+                <label for="books">Книги</label><br>
+                
+                <input type="checkbox" id="travel" name="interests" value="travel">
+                <label for="travel">Подорожі</label>
+            </div>
+            
+            <!-- Радіокнопки -->
+            <div class="form-section">
+                <h2>Радіокнопки (Radio Buttons)</h2>
+                
+                <p>Оберіть вашу стать:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Чоловіча</label><br>
+                
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Жіноча</label><br>
+                
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Інше</label>
+            </div>
+            
+            <!-- Кнопки -->
+            <div class="form-section">
+                <h2>Кнопки</h2>
+                
+                <input type="submit" name="submit" value="Надіслати дані">
+                <input type="reset" name="reset" value="Очистити форму">
+                <input type="button" value="Звичайна кнопка" onclick="alert('Це звичайна кнопка!')">
+            </div>
+            
+            <!-- Файл -->
+            <div class="form-section">
+                <h2>Завантаження файлу</h2>
+                
+                <label for="file">Виберіть файл для завантаження:</label>
+                <input type="file" id="file" name="file" size="30" accept=".jpg,.png,.pdf">
+            </div>
+            
+            <div class="button-group">
+                <button type="reset" class="reset-btn">Скинути</button>
+                <button type="button" class="regular-btn" onclick="showDate()">Показати дату</button>
+                <button type="submit" class="submit-btn">Відправити</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function showDate() {
+            alert("Поточна дата: " + new Date().toLocaleDateString());
+        }
+    </script>
+</body>
+</html>

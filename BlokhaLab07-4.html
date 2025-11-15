@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlokhaLab07-4.htm - Форма замовлення товару</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+        .radio-option, .checkbox-option {
+            margin-bottom: 8px;
+        }
+        .products-list {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .product-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+        }
+        .product-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .submit-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .required {
+            color: #e74c3c;
+        }
+        .info-box {
+            background-color: #e8f4fc;
+            border-left: 4px solid #3498db;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Форма замовлення товару</h1>
+        
+        <div class="info-box">
+            <strong>Увага!</strong> Поля, позначені зірочкою (<span class="required">*</span>), є обов'язковими для заповнення.
+        </div>
+        
+        <form action="#" method="post">
+            <!-- Банківські реквізити -->
+            <div class="form-section">
+                <h2>Банківські реквізити</h2>
+                
+                <label for="account">Номер банківського рахунку <span class="required">*</span>:</label>
+                <input type="text" id="account" name="account" required placeholder="Введіть номер вашого рахунку" size="30">
+                
+                <label for="user-id">Особистий номер користувача <span class="required">*</span>:</label>
+                <input type="text" id="user-id" name="user-id" required placeholder="Введіть ваш особистий номер" size="30">
+            </div>
+            
+            <!-- Вибір товарів -->
+            <div class="form-section">
+                <h2>Вибір товарів <span class="required">*</span></h2>
+                
+                <p>Оберіть товари для замовлення (можна вибрати декілька):</p>
+                
+                <div class="products-list">
+                    <div class="product-item">
+                        <input type="checkbox" id="product1" name="products" value="Ноутбук Dell Inspiron 15">
+                        <label for="product1">Ноутбук Dell Inspiron 15 - 25 999 грн</label>
+                    </div>
+                    <div class="product-item">
+                        <input type="checkbox" id="product2" name="products" value="Смартфон Samsung Galaxy S23">
+                        <label for="product2">Смартфон Samsung Galaxy S23 - 19 499 грн</label>
+                    </div>
+                    <div class="product-item">
+                        <input type="checkbox" id="product3" name="products" value="Навушники Sony WH-1000XM4">
+                        <label for="product3">Навушники Sony WH-1000XM4 - 8 299 грн</label>
+                    </div>
+                    <div class="product-item">
+                        <input type="checkbox" id="product4" name="products" value="Планшет Apple iPad Air">
+                        <label for="product4">Планшет Apple iPad Air - 32 799 грн</label>
+                    </div>
+                    <div class="product-item">
+                        <input type="checkbox" id="product5" name="products" value="Монітор LG UltraGear 27">
+                        <label for="product5">Монітор LG UltraGear 27 - 12 499 грн</label>
+                    </div>
+                    <div class="product-item">
+                        <input type="checkbox" id="product6" name="products" value="Фотоапарат Canon EOS R50">
+                        <label for="product6">Фотоапарат Canon EOS R50 - 21 999 грн</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Спосіб оплати -->
+            <div class="form-section">
+                <h2>Спосіб оплати <span class="required">*</span></h2>
+                
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="cash" name="payment" value="cash" required>
+                        <label for="cash">Готівковий розрахунок</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cashless" name="payment" value="cashless">
+                        <label for="cashless">Безготівковий розрахунок</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Додаткова інформація -->
+            <div class="form-section">
+                <h2>Додаткова інформація</h2>
+                
+                <p>Вкажіть, яку інформацію ви бажаєте отримати при відповіді:</p>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="balance" name="additional-info" value="balance">
+                        <label for="balance">Дані про залишки на рахунку</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="payments" name="additional-info" value="payments">
+                        <label for="payments">Список останніх виплат по рахунку</label>
+                    </div>
+                </div>
+                
+                <label for="comments">Довільні коментарі користувача:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Введіть ваші коментарі або додаткові побажання..."></textarea>
+            </div>
+            
+            <!-- Кнопки форми -->
+            <div class="button-group">
+                <button type="reset" class="reset-btn">Очистити форму</button>
+                <button type="submit" class="submit-btn">Відправити замовлення</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Перевірка обов'язкових полів
+            const account = document.getElementById('account').value;
+            const userId = document.getElementById('user-id').value;
+            const payment = document.querySelector('input[name="payment"]:checked');
+            const products = document.querySelectorAll('input[name="products"]:checked');
+            
+            if (!account || !userId || !payment) {
+                alert('Будь ласка, заповніть всі обов\'язкові поля!');
+                return;
+            }
+            
+            if (products.length === 0) {
+                alert('Будь ласка, оберіть хоча б один товар!');
+                return;
+            }
+            
+            // Якщо все заповнено правильно
+            alert('Ваше замовлення прийнято! Дякуємо за покупку!');
+            // Тут зазвичай буде відправка форми на сервер
+            // this.submit();
+        });
+    </script>
+</body>
+</html>
