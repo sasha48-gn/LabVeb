@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlokhaLab09-3</title>
+    <style>
+        /* Загальні стилі для сторінки */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2.red-title {
+            color: #ff0000;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 5px;
+        }
+        
+        h2.blue-title {
+            color: #0000ff;
+            font-family: 'Verdana', sans-serif;
+            text-align: left;
+            background-color: #e6f7ff;
+            padding: 10px;
+            border-left: 5px solid #0000ff;
+        }
+        
+        h2.green-title {
+            color: #008000;
+            font-family: 'Trebuchet MS', sans-serif;
+            text-align: right;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #990066;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .main-text {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            text-indent: 30px;
+            color: #333333;
+        }
+        
+        .footnote {
+            font-size: 12px;
+            font-style: italic;
+            color: #666666;
+            border-top: 1px dashed #999999;
+            padding-top: 5px;
+            margin-top: 15px;
+        }
+
+        .menu {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .menu:hover {
+            background-color: #555;
+        }
+        
+        .small {
+            font-size: 10px;
+            color: #888;
+            font-style: italic;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Лабораторна робота №9 - Стильові класи</h1>
+
+    <section id="part1">
+        <h2>Частина 1: Три різні класи для заголовків H2</h2>
+        
+        <h2 class="red-title">Це червоний заголовок H2</h2>
+        <p>Цей абзац слідує за червоним заголовком. Червоний заголовок має шрифт Georgia, вирівнювання по центру та червону лінію під текстом.</p>
+        
+        <h2 class="blue-title">Це синій заголовок H2</h2>
+        <p>Цей абзац слідує за синім заголовком. Синій заголовок має шрифт Verdana, вирівнювання по лівому краю, блакитний фон та синю лінію зліва.</p>
+        
+        <h2 class="green-title">Це зелений заголовок H2</h2>
+        <p>Цей абзац слідує за зеленим заголовком. Зелений заголовок має шрифт Trebuchet MS, вирівнювання по правому краю, курсивне накреслення та підкреслення.</p>
+        
+        <h2 class="red-title">Ще один червоний заголовок H2</h2>
+        <p>Ще один абзац після червоного заголовка, що демонструє повторне використання класу.</p>
+        
+        <h2 class="blue-title">Ще один синій заголовок H2</h2>
+        <p>Ще один абзац після синього заголовка, що демонструє повторне використання класу.</p>
+    </section>
+ 
+    <section id="part2">
+        <h2>Частина 2: Вільні класи (не пов'язані з тегами)</h2>
+        
+        <div class="section-title">Назва розділу 1</div>
+        <p class="main-text">Це основний текст розділу 1. Він використовує клас main-text, який задає шрифт Times New Roman, розмір 16px, міжрядковий інтервал 1.6, вирівнювання по ширині та червоний рядок 30px. Цей клас може застосовуватися до будь-якого текстового елементу.</p>
+        <div class="footnote">Це виноска до розділу 1. Використовується клас footnote з меншим розміром шрифту, курсивом та сірим кольором.</div>
+        
+        <div class="section-title">Назва розділу 2</div>
+        <p class="main-text">Це основний текст розділу 2. Тут ми знову використовуємо клас main-text для забезпечення єдності стилю основного тексту по всій сторінці. Класи section-title, main-text та footnote можна застосовувати до будь-яких елементів, не тільки до конкретних тегів.</p>
+        <div class="footnote">Це виноска до розділу 2. Клас footnote також можна використовувати в різних місцях документа.</div>
+        
+        <h3 class="section-title">Застосування класу section-title до тегу H3</h3>
+        <span class="main-text">Це демонстрація того, як клас main-text може застосовуватися до тегу span. Вільні класи не прив'язані до конкретних тегів, що робить їх дуже гнучкими у використанні.</span>
+        <div class="footnote">Виноска, що демонструє застосування класу footnote до тегу div.</div>
+    </section>
+
+    <section id="part3">
+        <h2>Частина 3: Класи menu та small</h2>
+        
+        <div class="menu">Головна сторінка</div>
+        <div class="menu">Про нас</div>
+        <div class="menu">Наші послуги</div>
+        <div class="menu">Контакти</div>
+        <div class="menu">Галерея</div>
+        
+        <p class="small">Адреса цієї сторінки: https://example.com/lab09.html</p>
+        <p class="small">Автор: Іваненко Іван Іванович</p>
+        <p class="small">Дата створення: 15 травня 2023 року</p>
+        
+        <div class="menu">Додаткове меню - пункт 1</div>
+        <div class="menu">Додаткове меню - пункт 2</div>
+        
+        <p class="small">Ця сторінка створена для демонстрації використання стильових класів у HTML-документі.</p>
+        <p class="small">Усі права захищені. Копіювання матеріалів заборонено.</p>
+    </section>
+</body>
+</html>
