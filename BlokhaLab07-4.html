@@ -110,7 +110,6 @@
         </div>
         
         <form action="#" method="post">
-            <!-- Банківські реквізити -->
             <div class="form-section">
                 <h2>Банківські реквізити</h2>
                 
@@ -120,8 +119,7 @@
                 <label for="user-id">Особистий номер користувача <span class="required">*</span>:</label>
                 <input type="text" id="user-id" name="user-id" required placeholder="Введіть ваш особистий номер" size="30">
             </div>
-            
-            <!-- Вибір товарів -->
+
             <div class="form-section">
                 <h2>Вибір товарів <span class="required">*</span></h2>
                 
@@ -154,8 +152,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Спосіб оплати -->
+
             <div class="form-section">
                 <h2>Спосіб оплати <span class="required">*</span></h2>
                 
@@ -170,8 +167,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Додаткова інформація -->
+
             <div class="form-section">
                 <h2>Додаткова інформація</h2>
                 
@@ -191,8 +187,7 @@
                 <label for="comments">Довільні коментарі користувача:</label>
                 <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Введіть ваші коментарі або додаткові побажання..."></textarea>
             </div>
-            
-            <!-- Кнопки форми -->
+
             <div class="button-group">
                 <button type="reset" class="reset-btn">Очистити форму</button>
                 <button type="submit" class="submit-btn">Відправити замовлення</button>
@@ -203,8 +198,7 @@
     <script>
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Перевірка обов'язкових полів
+
             const account = document.getElementById('account').value;
             const userId = document.getElementById('user-id').value;
             const payment = document.querySelector('input[name="payment"]:checked');
@@ -219,11 +213,9 @@
                 alert('Будь ласка, оберіть хоча б один товар!');
                 return;
             }
-            
-            // Якщо все заповнено правильно
+
             alert('Ваше замовлення прийнято! Дякуємо за покупку!');
-            // Тут зазвичай буде відправка форми на сервер
-            // this.submit();
+
         });
     </script>
 </body>
